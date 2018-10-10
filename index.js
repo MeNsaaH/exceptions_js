@@ -1,13 +1,22 @@
 /**
  * Easy way to define Custom Exceptions By just creating New Instance
  * of Exception
- * 
+ * @param name: optional The name of the exception
+ * With the name parameter, exception is instantiated as
+ * ExceptionName: Exception message
+ * Without name parameter, exception is instantiated as
+ * Error: Exception message
  * 
  */
 
-export default function Exception(message, fileName, lineNumber) {
-    function CustomError(message, fileName, lineNumber) {
-        var instance = new Error(message, fileName, lineNumber);
+function Exception(name) {
+    function CustomError(message) {
+        var instance = new Error(message);
+        instance.name = name
+
+        instance.is = function(err) {
+            return err === instance.name || CustomError === err
+        }
         Object.setPrototypeOf(instance, Object.getPrototypeOf(this));
          
         if (Error.captureStackTrace) {
@@ -24,10 +33,6 @@ export default function Exception(message, fileName, lineNumber) {
             configurable: true
         }
     });
-
-    CustomError.prototype.is = function (err) {
-        return CustomError === err
-    }
 
     if (Object.setPrototypeOf) {
         Object.setPrototypeOf(CustomError, Error);
