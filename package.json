@@ -21,6 +21,8 @@
   "homepage": "https://github.com/MeNsaaH/exceptions_js#readme",
   "devDependencies": {
     "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2"
-  }
+    "@babel/core": "^7.1.2",
+    "jest": "^23.6.0"
+  },
+  "dependencies": {}
 }
