@@ -5,7 +5,7 @@
  * 
  */
 
-function Exception(message) {
+export default function Exception(message) {
     function CustomError(message, fileName, lineNumber) {
         var instance = new Error(message, fileName, lineNumber);
         Object.setPrototypeOf(instance, Object.getPrototypeOf(this));
@@ -34,15 +34,4 @@ function Exception(message) {
         CustomError.__proto__ = Error;
     }
     return CustomError
-}
-
-const InvalidEntryError = new Exception
-
-
-try {
-    throw new InvalidEntryError("This is Invalid")
-} catch (err) {
-    console.log(err)
-    console.log(err instanceof InvalidEntryError)
-    console.log(err.is(InvalidEntryError))
 }
