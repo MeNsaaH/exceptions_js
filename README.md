@@ -17,7 +17,7 @@ An easier way of using javascript custom Exceptions. It can find very good usage
         if (err instanceof MyCustomError){
             //
         }
-        // Or more preferrably
+        // Or more conveniently
         if (err.is(MyCustomError)){
             //some code
         }

@@ -9,6 +9,7 @@ export default function Exception(message, fileName, lineNumber) {
     function CustomError(message, fileName, lineNumber) {
         var instance = new Error(message, fileName, lineNumber);
         Object.setPrototypeOf(instance, Object.getPrototypeOf(this));
+         
         if (Error.captureStackTrace) {
             Error.captureStackTrace(instance, CustomError);
         }
