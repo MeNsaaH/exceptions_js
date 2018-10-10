@@ -19,9 +19,8 @@ function Exception(name) {
         const instance = new Error(message);
         instance.name = name
 
-        // is function. look on to Making it prototypal
         instance.is = function(err) {
-            return err === instance.name || CustomError === err
+            return err === instance.name || this instanceof err
         }
         Object.setPrototypeOf(instance, Object.getPrototypeOf(this));
          
@@ -47,3 +46,4 @@ function Exception(name) {
     }
     return CustomError
 }
+
