@@ -1,7 +1,7 @@
 Exception JS
 ================
 
-An easier way of using javascript custom Exceptions.
+An easier way of using javascript custom Exceptions. It can find very good usage in Promises.
 
 ```js
     import Exception from 'exception'
@@ -14,6 +14,10 @@ An easier way of using javascript custom Exceptions.
         // Some code to be tried
         throw new MyCustomError;
     }catch(err) {
+        if (err instanceof MyCustomError){
+            //
+        }
+        // Or more preferrably
         if (err.is(MyCustomError)){
             //some code
         }

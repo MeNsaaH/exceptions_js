@@ -5,7 +5,7 @@
  * 
  */
 
-export default function Exception(message) {
+export default function Exception(message, fileName, lineNumber) {
     function CustomError(message, fileName, lineNumber) {
         var instance = new Error(message, fileName, lineNumber);
         Object.setPrototypeOf(instance, Object.getPrototypeOf(this));
@@ -24,7 +24,7 @@ export default function Exception(message) {
         }
     });
 
-    CustomError.prototype.is = function(err) {
+    CustomError.prototype.is = function (err) {
         return CustomError === err
     }
 
