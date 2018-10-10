@@ -12,10 +12,10 @@
 
 function Exception(name) {
     /** 
-     * Create CustomError Logic
+     * Create __Error Logic
      * @param message optional. message to be displayed by exception
      */
-    function CustomError(message) {
+    function __Error(message) {
         const instance = new Error(message);
         instance.name = name
 
@@ -26,12 +26,12 @@ function Exception(name) {
         Object.setPrototypeOf(instance, Object.getPrototypeOf(this));
          
         if (Error.captureStackTrace) {
-            Error.captureStackTrace(instance, CustomError);
+            Error.captureStackTrace(instance, __Error);
         }
         return instance;
     }
 
-    CustomError.prototype = Object.create(Error.prototype, {
+    __Error.prototype = Object.create(Error.prototype, {
         constructor: {
             value: Error,
             enumerable: false,
@@ -41,10 +41,9 @@ function Exception(name) {
     });
 
     if (Object.setPrototypeOf) {
-        Object.setPrototypeOf(CustomError, Error);
+        Object.setPrototypeOf(__Error, Error);
     } else {
-        CustomError.__proto__ = Error;
+        __Error.__proto__ = Error;
     }
-    return CustomError
+    return __Error
 }
-
