@@ -19,6 +19,7 @@ function Exception(name) {
         const instance = new Error(message);
         instance.name = name
 
+        // is function. look on to Making it prototypal
         instance.is = function(err) {
             return err === instance.name || this instanceof err
         }
