@@ -43,3 +43,11 @@ For best practices, you should have all related exceptions in one file
 
     // Some Error Handling Code
 ```
+
+Testing
+--------
+To test install all dependencies and then run test
+```js
+   npm link
+   npm test
+```
