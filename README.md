@@ -1,7 +1,7 @@
 Exception JS
 ================
 
-An easier way of using javascript custom Exceptions. It can find very good usage in Promises.
+Declaring Custom Exceptions in one line. Valid for all versions of javascript. It can find very good usage in Promises.
 All standard Error methods apply to the custom Exception created, `CustomException.stack`, `CustomException.name`, `CustomException.toString()`, `CustomException.message` and others.
 ```js
     import Exception from 'exception'
