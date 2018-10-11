@@ -2,10 +2,11 @@ Exception JS
 ================
 
 An easier way of using javascript custom Exceptions. It can find very good usage in Promises.
-
+All standard Error methods apply to the custom Exception created, `CustomException.stack`, `CustomException.name`, `CustomException.toString()`, `CustomException.message` and others.
 ```js
     import Exception from 'exception'
-
+    // Node
+    const Exception = require('exception')
     // passing the name parameter ensures the exception displays
     // with the name 
     // Without name parameter the Exception is instantiated as

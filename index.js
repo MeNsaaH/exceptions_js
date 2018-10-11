@@ -47,3 +47,5 @@ function Exception(name) {
     }
     return __Error
 }
+
+module.exports = Exception
