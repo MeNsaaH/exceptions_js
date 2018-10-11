@@ -1,5 +1,5 @@
 {
-  "name": "customException",
+  "name": "extendErrors",
   "version": "1.0.0",
   "description": "An Exception handler",
   "main": "index.js",
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/MeNsaaH/exceptions_js.git"
   },
   "keywords": [
-    "exception_js"
+    "CustomErrors, errors, "
   ],
   "author": "Manasseh Mmadu",
   "license": "MIT",
