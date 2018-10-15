@@ -11,7 +11,10 @@
     "url": "git+https://github.com/MeNsaaH/exceptions_js.git"
   },
   "keywords": [
-    "exception_js"
+    "exception_js",
+    "exception list",
+    "custom exceptions",
+    "custom errors",
   ],
   "author": "Manasseh Mmadu",
   "license": "MIT",

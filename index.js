@@ -23,6 +23,10 @@ function Exception(name) {
         instance.is = function(err) {
             return err === instance.name || this instanceof err
         }
+
+        // instance.in = function(err_list){
+        //     return err_list.hasOwnProperty(this)
+        // }
         Object.setPrototypeOf(instance, Object.getPrototypeOf(this));
          
         if (Error.captureStackTrace) {
@@ -48,4 +52,34 @@ function Exception(name) {
     return __Error
 }
 
-module.exports = Exception
+
+/**
+ * Creates a list of exceptions
+ * this can then be access as objects of the Function Exception
+ */
+function ExceptionList(error_list){
+    let _errors = new Array()
+
+    // Create a list of exceptions
+    function _createErrorList(){
+        for (let err of error_list){
+            _errors[err] = new Exception(err)
+        }
+        return _errors
+    }
+
+    // check if an error is in an error_list
+    _errors.has = function(err) {
+        return _errors.hasOwnProperty(err.name)
+    }
+
+    return _createErrorList()
+
+    
+}
+
+
+module.exports = {
+    Exception,
+    ExceptionList,
+}

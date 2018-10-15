@@ -4,9 +4,10 @@ Exception JS
 Declaring Custom Exceptions in one line. Valid for all versions of javascript. It can find very good usage in Promises.
 All standard Error methods apply to the custom Exception created, `CustomException.stack`, `CustomException.name`, `CustomException.toString()`, `CustomException.message` and others.
 ```js
-    import Exception from 'exception'
-    // Node
-    const Exception = require('exception')
+    import {Exception} from 'exception'
+    
+    // const {Exception} = require('exception')
+    
     // passing the name parameter ensures the exception displays
     // with the name 
     // Without name parameter the Exception is instantiated as
@@ -34,6 +35,31 @@ All standard Error methods apply to the custom Exception created, `CustomExcepti
 
     }
 ```
+
+
+To create exceptions with similar traits, you can use the `Exceptions` class
+
+```js
+    import {ExceptionList} from 'exception'
+
+    // const {ExceptionList} = require('exception')
+
+    const NetworkErrors = ExceptionList(['SSLError', 'ConnectionLostError', 'SMTPError'])
+
+    try{
+        // Some block of code
+        throw new NetworkErrors.SSLError("Unable to establish SSL Connection")
+    }catch(err){
+        if err.is(NetworkErrors.SSLError){
+            // Do Something
+        }
+        if NetworkErrors.has(err){
+            // Do something
+        }
+    }
+
+```
+
 
 For best practices, you should have all related exceptions in one file
 
