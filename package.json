@@ -1,5 +1,5 @@
 {
-  "name": "exception_js",
+  "name": "extendErrors",
   "version": "1.0.0",
   "description": "An Exception handler",
   "main": "index.js",
@@ -14,7 +14,7 @@
     "exception_js",
     "exception list",
     "custom exceptions",
-    "custom errors",
+    "custom errors"
   ],
   "author": "Manasseh Mmadu",
   "license": "MIT",

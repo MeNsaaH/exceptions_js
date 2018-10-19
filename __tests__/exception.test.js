@@ -1,4 +1,4 @@
-const Exception = require('../index')
+const {Exception} = require('../index')
 
 const MyCustomException = new Exception("MyCustomException")
 

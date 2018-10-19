@@ -1,8 +1,17 @@
-Exception JS
+ExtendErrors
 ================
 
 Declaring Custom Exceptions in one line. Valid for all versions of javascript. It can find very good usage in Promises.
 All standard Error methods apply to the custom Exception created, `CustomException.stack`, `CustomException.name`, `CustomException.toString()`, `CustomException.message` and others.
+
+Installation
+-------------
+```js
+   npm install extendErrors
+```
+
+Usage
+--------------
 ```js
     import {Exception} from 'exception'
     
@@ -68,4 +77,12 @@ For best practices, you should have all related exceptions in one file
     import {OtherException, PrimaryException} from '../my_exception'
 
     // Some Error Handling Code
+```
+
+Testing
+--------
+To test install all dependencies and then run test
+```js
+   npm link
+   npm test
 ```
